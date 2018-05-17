@@ -1,12 +1,18 @@
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@font-face {
+    font-family: 'Helvetica Regular';
+    src: url("/fonts/HelveticaNeueLTStd-Roman.otf") format("otf"),
+}
 
 // Variables
 @import "variables";
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+@import 'homeGradient';
 
 .navbar-laravel {
   background-color: #fff;
