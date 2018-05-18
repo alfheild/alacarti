@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import BootrapVue from 'bootstrap-vue';
 import ParticlesJS from 'particles.js';
+import Granim from 'granim';
+import $ from 'jquery';
 
 Vue.use(BootrapVue);
 
@@ -17,6 +19,20 @@ new Vue({
     el: '#app'
 });
 
-particlesJS.load('home', '/particlesjs-config.json', function() {
+var granimInstance = new Granim({
+    element: '#granim-canvas',
+    name: 'granim',
+    opacity: [1, 1],
+    states: {
+        "default-state": {
+            gradients: [
+                ['#EE7752', '#E73C7E'],
+                ['#E73C7E', '#EE7752'],
+            ]
+        }
+    }
+});
+
+particlesJS.load('home', '/particlesjs-config.json', function () {
     console.log('callback - particles.js config loaded');
-  });
+});

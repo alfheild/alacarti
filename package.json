@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "bootstrap-vue": "^2.0.0-rc.10",
+        "granim": "^1.1.0",
         "particles.js": "^2.0.0"
     }
 }
