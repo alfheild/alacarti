@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import BootrapVue from 'bootstrap-vue';
-import ParticlesJS from 'particles.js';
 import Granim from 'granim';
-import $ from 'jquery';
+import VBar from 'vuebar';
+
+require('particles.js');
 
 Vue.use(BootrapVue);
+Vue.use(VBar);
 
 /* axios config
 let token = document.head.querySelector('meta[name="csrf-token"]');
@@ -19,20 +21,23 @@ new Vue({
     el: '#app'
 });
 
-var granimInstance = new Granim({
+new Granim({
     element: '#granim-canvas',
     name: 'granim',
     opacity: [1, 1],
+    isPausedWhenNotInView: true,
     states: {
         "default-state": {
             gradients: [
                 ['#EE7752', '#E73C7E'],
+                ['#C95924', '#CE8A04'],
                 ['#E73C7E', '#EE7752'],
-            ]
+            ],
+            transitionSpeed: 20000,
         }
-    }
+    },
 });
 
-particlesJS.load('home', '/particlesjs-config.json', function () {
+particlesJS.load('particles', '/particlesjs-config.json', function () {
     console.log('callback - particles.js config loaded');
 });

@@ -5059,7 +5059,7 @@ input[type="button"].btn-block {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: 0 solid transparent;
   border-radius: 0.25rem;
 }
 
@@ -5110,11 +5110,11 @@ input[type="button"].btn-block {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  border-bottom: 0 solid transparent;
 }
 
 .card-header:first-child {
-  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  border-radius: calc(0.25rem - 0) calc(0.25rem - 0) 0 0;
 }
 
 .card-header + .list-group .list-group-item:first-child {
@@ -5124,11 +5124,11 @@ input[type="button"].btn-block {
 .card-footer {
   padding: 0.75rem 1.25rem;
   background-color: rgba(0, 0, 0, 0.03);
-  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  border-top: 0 solid transparent;
 }
 
 .card-footer:last-child {
-  border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+  border-radius: 0 0 calc(0.25rem - 0) calc(0.25rem - 0);
 }
 
 .card-header-tabs {
@@ -5154,19 +5154,19 @@ input[type="button"].btn-block {
 
 .card-img {
   width: 100%;
-  border-radius: calc(0.25rem - 1px);
+  border-radius: calc(0.25rem - 0);
 }
 
 .card-img-top {
   width: 100%;
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px);
+  border-top-left-radius: calc(0.25rem - 0);
+  border-top-right-radius: calc(0.25rem - 0);
 }
 
 .card-img-bottom {
   width: 100%;
-  border-bottom-right-radius: calc(0.25rem - 1px);
-  border-bottom-left-radius: calc(0.25rem - 1px);
+  border-bottom-right-radius: calc(0.25rem - 0);
+  border-bottom-left-radius: calc(0.25rem - 0);
 }
 
 .card-deck {
@@ -10416,37 +10416,54 @@ a.text-dark:focus {
   }
 }
 
-#home {
-  height: 100vh;
-  color: #fff;
+.full-height {
+  height: 100%;
 }
 
-@-webkit-keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+.full-height h1,
+.full-height h2,
+.full-height h3 {
+  color: #ffffff;
 }
 
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
+.vb > .vb-dragger {
+  z-index: 5;
+  width: 12px;
+  right: 0;
+}
 
-  50% {
-    background-position: 100% 50%;
-  }
+.vb > .vb-dragger > .vb-dragger-styler {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: rotate3d(0, 0, 0, 0);
+          transform: rotate3d(0, 0, 0, 0);
+  -webkit-transition: background-color 300ms ease-out, margin 100ms ease-out, height 100ms ease-out;
+  transition: background-color 300ms ease-out, margin 100ms ease-out, height 100ms ease-out;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 5px 5px 5px 0;
+  border-radius: 20px;
+  height: calc(100% - 10px);
+  display: block;
+}
 
-  100% {
-    background-position: 0% 50%;
-  }
+.vb.vb-scrolling-phantom > .vb-dragger > .vb-dragger-styler {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.vb > .vb-dragger:hover > .vb-dragger-styler {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0px;
+  height: 100%;
+}
+
+.vb.vb-dragging > .vb-dragger > .vb-dragger-styler {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0px;
+  height: 100%;
+}
+
+.vb.vb-dragging-phantom > .vb-dragger > .vb-dragger-styler {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .navbar-laravel {
