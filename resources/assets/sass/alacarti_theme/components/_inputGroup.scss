@@ -1,0 +1,31 @@
+$padd: 50px;
+
+.AlInputGroup {
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(#{$padd} - 10px);
+    height: 100%;
+  }
+
+  &--left{
+    .AlInputGroup__icon{
+      left: 5px;
+    }
+    .AlInputGroup__input{
+      padding-left: $padd;
+    }
+  }
+  &--right{
+    .AlInputGroup__icon{
+      right: 5px;
+    }
+    .AlInputGroup__input{
+      padding-right: $padd;
+    }
+  }
+}
