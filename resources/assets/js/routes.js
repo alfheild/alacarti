@@ -5,7 +5,12 @@ const router = new VueRouter({
         {
             path: '/',
             name: 'home',
-            component: require('./views/Home')
+            component: require('./views/Home'),
+        },
+        {
+            path: 'results',
+            name: 'results',
+            component: require('./views/Results')
         },
     ],
 });

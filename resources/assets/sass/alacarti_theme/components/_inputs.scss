@@ -1,0 +1,19 @@
+input, .AlInput {
+  padding: 12px;
+  color: $color-light;
+  background: $color-secondary;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+
+  @include inputSizes();
+  @include shadows();
+
+  &:hover:not(:focus){
+    background: $input-hover-bg;
+  }
+  &:active,
+  &:focus{
+    border: $input-active-border;
+  }
+}

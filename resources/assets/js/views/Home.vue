@@ -13,6 +13,9 @@
                         </b-row>
                         <b-row align-h="center" class="pt-3">
                             <b-col md="6">
+
+                                <input class="AlInput--large AlFullWidth" type="text" />
+
                                 <b-form>
                                     <b-input-group prepend="&#128269">
                                         <b-form-input id="finder"
@@ -31,8 +34,37 @@
 </template>
 
 <script>
+    import SearchIcon from './../../icons/search.svg';
+    import Granim from 'granim';
+    require('particles.js');
+
     export default {
-        name: "Home"
+        name: "Home",
+
+        components: {
+            SearchIcon,
+        },
+
+        mounted() {
+            new Granim({
+                element: '#granim-canvas',
+                name: 'granim',
+                opacity: [1, 1],
+                isPausedWhenNotInView: true,
+                states: {
+                    "default-state": {
+                        gradients: [
+                            ['#EE7752', '#E73C7E'],
+                            ['#C95924', '#CE8A04'],
+                            ['#E73C7E', '#EE7752'],
+                        ],
+                        transitionSpeed: 20000,
+                    }
+                },
+            });
+
+            particlesJS.load('particles', '/particlesjs-config.json', () => {});
+        }
     }
 </script>
 

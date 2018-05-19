@@ -1,0 +1,69 @@
+// Colors
+$color-primary: #2B262D;
+$color-secondary: #363138;
+$color-aux: #E06764;
+$color-light: #FFFFFF;
+$color-error: #D23A4B;
+$color-success: #37B487;
+$color-warning: #E7BE33;
+
+// Heights
+$height-l: 70px;
+$height-m: 40px;
+$height-s: 26px;
+
+// Font sizes
+$font-size-xl: 20px;
+$font-size-l: 18px;
+$font-size-m: 16px;
+$font-size-s: 14px;
+$font-size-xs: 12px;
+$font-size-xxs: 11px;
+
+// Focus/Hovers
+// No salen en los colores principales en el hover/active de los inputs (puto ui kit)
+$input-hover-bg: lighten($color-secondary, 5);
+$input-active-border: 1px solid #9C9C9C;
+
+// Fonts
+@font-face {
+  font-family: 'Helvetica Regular';
+  src: url("/fonts/HelveticaNeueLTStd-Roman.otf") format("otf");
+}
+
+$font-primary: "Helvetica Regular", sans-serif;
+
+// Mixins
+
+@mixin inputSizes(){
+  height: $height-m;
+  font-size: $font-size-s;
+
+  &--large{
+    height: $height-l;
+    font-size: $font-size-l;
+  }
+  &--small{
+    height: $height-s;
+    font-size: $font-size-xxs;
+  }
+}
+
+@mixin shadows($default: 'subtle'){
+  @if $default == 'subtle' {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0877491);
+  } @else {
+    &--shadowSubtle{
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0877491);
+    }
+  }
+
+  &--shadowBig{
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.24);
+  }
+
+  &--shadowInner{
+    box-shadow: inset 4px -14px 11px rgba(0, 0, 0, 0.0222203);
+  }
+}
+
