@@ -10,16 +10,19 @@
     <title>@yield('title', config('app.name'))</title>
     <style>
         html,
-        body {
+        body,
+        #app {
             height: 100%;
         }
     </style>
 </head>
 
 <body>
-    <main id="app" style="height: inherit;">
-        @yield('content')
-    </main>
+    <div id="app">
+        <App/>
+    </div>
+    <script src="{{ mix('/js/manifest.js') }}"></script>
+    <script src="{{ mix('/js/vendor.js') }}"></script>
     <script src="{{ mix('/js/app.js') }}"></script>
 </body>
 </html>

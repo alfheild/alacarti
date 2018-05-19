@@ -1,12 +1,16 @@
 import Vue from 'vue';
+import {router, VueRouter} from './routes';
 import BootrapVue from 'bootstrap-vue';
 import Granim from 'granim';
-import VBar from 'vuebar';
+import App from './views/App';
+// import VueI18n from 'vue-i18n'
 
 require('particles.js');
 
+Vue.config.productionTip = false;
+Vue.use(VueRouter);
 Vue.use(BootrapVue);
-Vue.use(VBar);
+// Vue.use(VueI18n);
 
 /* axios config
 let token = document.head.querySelector('meta[name="csrf-token"]');
@@ -18,7 +22,9 @@ if (token) {
 */
 
 new Vue({
-    el: '#app'
+    el: '#app',
+    components: { App },
+    router,
 });
 
 new Granim({
@@ -38,6 +44,4 @@ new Granim({
     },
 });
 
-particlesJS.load('particles', '/particlesjs-config.json', function () {
-    console.log('callback - particles.js config loaded');
-});
+particlesJS.load('particles', '/particlesjs-config.json', () => {});
