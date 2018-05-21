@@ -10417,6 +10417,7 @@ a.text-dark:focus {
 }
 
 body {
+  color: #333;
   font-family: "Helvetica Regular", sans-serif;
   font-size: 14px;
   line-height: normal;
@@ -10425,8 +10426,8 @@ body {
 input,
 .AlInput {
   padding: 12px;
-  color: #FFFFFF;
-  background: #363138;
+  color: #333;
+  background: #EFEFEF;
   border-radius: 4px;
   border: none;
   outline: none;
@@ -10462,7 +10463,7 @@ input--shadowInner,
 
 input:hover:not(:focus),
 .AlInput:hover:not(:focus) {
-  background: #433d46;
+  background: #fcfcfc;
 }
 
 input:active,
